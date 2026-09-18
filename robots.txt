@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://highgarden.github.io/highreader-site/sitemap.xml
+Sitemap: https://highreader.highgarden.app/sitemap.xml
