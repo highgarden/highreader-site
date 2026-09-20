@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>HighReader — User dictionary guide</title><meta name="description" content="Create and manage your HighReader user dictionary with JSON or CSV. File formats, examples, and import guidance in ten languages."><link rel="canonical" href="https://highreader.highgarden.app/dictionary-guide.html"><link rel="stylesheet" href="./site.css"></head>
+<body><a class="skip" href="#main" id="skip-link">Skip to content</a><header><a class="brand" href="./index.html">HighReader</a><nav><a id="home-link" href="./index.html">Home</a><label for="guide-language" id="language-label">Language</label><select id="guide-language"><option value="en" lang="en">English</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="ru" lang="ru">Русский</option><option value="hi" lang="hi">हिन्दी</option><option value="ar" lang="ar">العربية</option></select></nav></header><main id="main"><article data-language="en" lang="en" dir="ltr"><h1>User dictionary: JSON &amp; CSV guide</h1><p>In Settings → User dictionaries, add a dictionary, enter a name (for example, “Essential 1,000 words”), and choose the original and meaning languages. Select a JSON or CSV file. These settings belong in the app, not in the file.</p><h2>Fields</h2><p>original and meaning are required, non-empty text. example is an optional sentence. type is optional: word or idiom. If omitted, an original containing whitespace is classified as an idiom; otherwise it is a word. Keep field names in English exactly as shown, regardless of your selected languages.</p><h2>JSON format</h2><p>Save a UTF-8 .json file containing an array of objects. Do not add comments or trailing commas. The example uses English originals and Korean meanings; replace the text with your chosen languages.</p><pre dir="ltr"><code>[
+  {
+    &quot;original&quot;: &quot;apple&quot;,
+    &quot;meaning&quot;: &quot;사과&quot;,
+    &quot;example&quot;: &quot;I eat an apple.&quot;,
+    &quot;type&quot;: &quot;word&quot;
+  },
+  {
+    &quot;original&quot;: &quot;look after&quot;,
+    &quot;meaning&quot;: &quot;돌보다&quot;,
+    &quot;example&quot;: &quot;Please look after my bag.&quot;,
+    &quot;type&quot;: &quot;idiom&quot;
+  }
+]
+</code></pre><a class="download" download href="./dictionary-example.json">Download JSON example</a><h2>CSV format</h2><p>Save as CSV UTF-8 (.csv) with a comma separator and a header row. original and meaning columns are required; example and type columns may be omitted. Put values containing commas, quotation marks or line breaks inside double quotes. Write a quotation mark inside a quoted value as two quotation marks. Spreadsheet apps usually handle this when exporting as CSV UTF-8.</p><pre dir="ltr"><code>original,meaning,example,type
+apple,사과,I eat an apple.,word
+look after,돌보다,Please look after my bag.,idiom
+</code></pre><a class="download" download href="./dictionary-example.csv">Download CSV example</a><h2>Import checks</h2><p>Use a file no larger than 10 MB and no more than 20,000 entries. Empty originals or meanings and duplicate originals within one file are rejected. Duplicate matching ignores case and normalizes whitespace. Correct the file and import it again.</p><h2>Managing your dictionary</h2><p>Open a dictionary to search and edit entries. You can rename it, enable or disable it, replace its file, or delete it. Enabled matching user dictionary entries take priority over built-in dictionary entries on pages, and your dictionary name appears as the source.</p></article><article data-language="ko" lang="ko" dir="ltr"><h1>사용자 사전 JSON·CSV 등록 가이드</h1><p>설정 → 사용자 사전에서 사전을 추가하고 이름(예: “초등 필수 단어 1000”)과 원문 언어·뜻 언어를 선택한 뒤 JSON 또는 CSV 파일을 고르세요. 이름과 언어는 파일이 아닌 앱에서 설정합니다.</p><h2>입력 항목</h2><p>original(원문)과 meaning(뜻)은 비어 있지 않은 필수 문자열입니다. example(예문)은 선택입니다. type은 word(단어) 또는 idiom(숙어)이며 생략할 수 있습니다. 생략하면 원문에 공백이 있는 항목은 숙어, 나머지는 단어로 분류합니다. 선택한 언어와 관계없이 필드 이름은 예시의 영문 그대로 사용하세요.</p><h2>JSON 형식</h2><p>객체 배열을 담은 UTF-8 .json 파일로 저장하세요. 주석이나 마지막 항목 뒤 쉼표는 넣지 마세요. 예시는 영어 원문·한국어 뜻이며, 선택한 언어에 맞게 내용을 바꾸면 됩니다.</p><pre dir="ltr"><code>[
+  {
+    &quot;original&quot;: &quot;apple&quot;,
+    &quot;meaning&quot;: &quot;사과&quot;,
+    &quot;example&quot;: &quot;I eat an apple.&quot;,
+    &quot;type&quot;: &quot;word&quot;
+  },
+  {
+    &quot;original&quot;: &quot;look after&quot;,
+    &quot;meaning&quot;: &quot;돌보다&quot;,
+    &quot;example&quot;: &quot;Please look after my bag.&quot;,
+    &quot;type&quot;: &quot;idiom&quot;
+  }
+]
+</code></pre><a class="download" download href="./dictionary-example.json">JSON 예제 다운로드</a><h2>CSV 형식</h2><p>쉼표로 구분하고 첫 줄에 열 이름이 있는 CSV UTF-8(.csv) 파일로 저장하세요. original·meaning 열은 필수이며 example·type 열은 생략할 수 있습니다. 값에 쉼표, 큰따옴표, 줄바꿈이 있으면 전체를 큰따옴표로 감싸세요. 그 안의 큰따옴표는 두 번 겹쳐 적습니다. 스프레드시트에서 CSV UTF-8로 저장하면 보통 자동 처리됩니다.</p><pre dir="ltr"><code>original,meaning,example,type
+apple,사과,I eat an apple.,word
+look after,돌보다,Please look after my bag.,idiom
+</code></pre><a class="download" download href="./dictionary-example.csv">CSV 예제 다운로드</a><h2>등록 전 확인</h2><p>파일은 최대 10MB, 항목은 최대 20,000개입니다. 원문·뜻이 비어 있거나 한 파일 안에 중복 원문이 있으면 등록되지 않습니다. 중복 확인 시 대소문자를 구분하지 않고 공백을 정규화합니다. 파일을 수정한 뒤 다시 등록하세요.</p><h2>사전 관리</h2><p>사전을 열어 항목을 검색·수정할 수 있습니다. 이름 변경, 사용 여부 설정, 파일 교체, 삭제도 가능합니다. 페이지에 같은 단어·숙어가 있으면 사용 중인 사용자 사전을 기본 사전보다 우선 적용하고 등록한 사전 이름을 출처로 표시합니다.</p></article><article data-language="ja" lang="ja" dir="ltr"><h1>ユーザー辞書：JSON・CSV登録ガイド</h1><p>設定 → ユーザー辞書から辞書を追加し、名前（例：「必須単語1000」）と原文・意味の言語を選び、JSONまたはCSVファイルを選択します。名前と言語はファイルではなくアプリで設定します。</p><h2>入力項目</h2><p>original（原文）とmeaning（意味）は空でない文字列が必須です。example（例文）は任意です。typeはword（単語）またはidiom（熟語）で、省略できます。省略時は原文に空白を含む項目を熟語、それ以外を単語とします。項目名は選択言語に関係なく例と同じ英語で記載してください。</p><h2>JSON形式</h2><p>オブジェクトの配列をUTF-8の.jsonファイルとして保存します。コメントや末尾の余分なコンマは使えません。例は英語の原文と韓国語の意味です。選択した言語の内容に置き換えてください。</p><pre dir="ltr"><code>[
+  {
+    &quot;original&quot;: &quot;apple&quot;,
+    &quot;meaning&quot;: &quot;사과&quot;,
+    &quot;example&quot;: &quot;I eat an apple.&quot;,
+    &quot;type&quot;: &quot;word&quot;
+  },
+  {
+    &quot;original&quot;: &quot;look after&quot;,
+    &quot;meaning&quot;: &quot;돌보다&quot;,
+    &quot;example&quot;: &quot;Please look after my bag.&quot;,
+    &quot;type&quot;: &quot;idiom&quot;
+  }
+]
+</code></pre><a class="download" download href="./dictionary-example.json">JSONの例をダウンロード</a><h2>CSV形式</h2><p>コンマ区切りで1行目に列名を記したCSV UTF-8（.csv）として保存します。originalとmeaningは必須で、exampleとtype列は省略できます。コンマ、二重引用符、改行を含む値は二重引用符で囲み、その中の二重引用符は2つ重ねます。表計算アプリのCSV UTF-8出力では通常自動処理されます。</p><pre dir="ltr"><code>original,meaning,example,type
+apple,사과,I eat an apple.,word
+look after,돌보다,Please look after my bag.,idiom
+</code></pre><a class="download" download href="./dictionary-example.csv">CSVの例をダウンロード</a><h2>登録前の確認</h2><p>ファイルは最大10MB、項目は最大20,000件です。原文・意味が空の場合や、同じファイル内に原文の重複がある場合は登録できません。重複の判定では大文字・小文字を区別せず空白を正規化します。修正して再登録してください。</p><h2>辞書の管理</h2><p>辞書を開いて項目を検索・編集できます。名前変更、有効・無効の切り替え、ファイル差し替え、削除も可能です。ページでは有効なユーザー辞書の一致項目を標準辞書より優先し、登録した辞書名を出典として表示します。</p></article><article data-language="fr" lang="fr" dir="ltr"><h1>Dictionnaire personnel : guide JSON et CSV</h1><p>Dans Réglages → Dictionnaires personnels, ajoutez un dictionnaire, saisissez un nom (par exemple « 1 000 mots essentiels »), choisissez les langues des originaux et des définitions, puis un fichier JSON ou CSV. Le nom et les langues se règlent dans l’application, pas dans le fichier.</p><h2>Champs</h2><p>original et meaning sont des textes obligatoires non vides. example est une phrase facultative. type est facultatif : word ou idiom. Sans type, un original contenant des espaces est classé comme expression, sinon comme mot. Conservez les noms de champs en anglais tels quels, quelle que soit la langue choisie.</p><h2>Format JSON</h2><p>Enregistrez un tableau d’objets dans un fichier .json UTF-8, sans commentaires ni virgule finale. L’exemple contient des originaux anglais et des définitions coréennes ; remplacez-les par vos langues.</p><pre dir="ltr"><code>[
+  {
+    &quot;original&quot;: &quot;apple&quot;,
+    &quot;meaning&quot;: &quot;사과&quot;,
+    &quot;example&quot;: &quot;I eat an apple.&quot;,
+    &quot;type&quot;: &quot;word&quot;
+  },
+  {
+    &quot;original&quot;: &quot;look after&quot;,
+    &quot;meaning&quot;: &quot;돌보다&quot;,
+    &quot;example&quot;: &quot;Please look after my bag.&quot;,
+    &quot;type&quot;: &quot;idiom&quot;
+  }
+]
+</code></pre><a class="download" download href="./dictionary-example.json">Télécharger l’exemple JSON</a><h2>Format CSV</h2><p>Enregistrez en CSV UTF-8 (.csv), avec des virgules comme séparateurs et une ligne d’en-tête. Les colonnes original et meaning sont obligatoires ; example et type peuvent être omises. Entourez de guillemets doubles les valeurs contenant des virgules, guillemets ou sauts de ligne. Doublez les guillemets à l’intérieur. Les tableurs le font généralement lors de l’export CSV UTF-8.</p><pre dir="ltr"><code>original,meaning,example,type
+apple,사과,I eat an apple.,word
+look after,돌보다,Please look after my bag.,idiom
+</code></pre><a class="download" download href="./dictionary-example.csv">Télécharger l’exemple CSV</a><h2>Vérifications</h2><p>Limites : 10 Mo et 20 000 entrées. Les originaux ou définitions vides et les originaux en double dans un même fichier sont refusés. La détection ignore la casse et normalise les espaces. Corrigez le fichier et réimportez-le.</p><h2>Gestion</h2><p>Ouvrez un dictionnaire pour rechercher et modifier ses entrées. Vous pouvez le renommer, l’activer ou le désactiver, remplacer son fichier ou le supprimer. Sur les pages, les correspondances d’un dictionnaire personnel actif sont prioritaires sur le dictionnaire intégré et affichent le nom de votre dictionnaire comme source.</p></article><article data-language="de" lang="de" dir="ltr"><h1>Eigenes Wörterbuch: JSON- und CSV-Anleitung</h1><p>Fügen Sie unter Einstellungen → Eigene Wörterbücher ein Wörterbuch hinzu. Geben Sie einen Namen ein (z. B. „1.000 Grundwörter“), wählen Sie die Sprachen für Original und Bedeutung und eine JSON- oder CSV-Datei. Name und Sprachen werden in der App festgelegt, nicht in der Datei.</p><h2>Felder</h2><p>original und meaning müssen nicht leere Texte enthalten. example ist ein optionaler Beispielsatz. type ist optional: word oder idiom. Ohne type gilt ein Original mit Leerraum als Redewendung, sonst als Wort. Verwenden Sie unabhängig von der Sprache genau die englischen Feldnamen.</p><h2>JSON-Format</h2><p>Speichern Sie eine Liste von Objekten als UTF-8-Datei mit der Endung .json, ohne Kommentare oder abschließende Kommas. Das Beispiel enthält englische Originale und koreanische Bedeutungen. Ersetzen Sie diese durch Ihre gewählten Sprachen.</p><pre dir="ltr"><code>[
+  {
+    &quot;original&quot;: &quot;apple&quot;,
+    &quot;meaning&quot;: &quot;사과&quot;,
+    &quot;example&quot;: &quot;I eat an apple.&quot;,
+    &quot;type&quot;: &quot;word&quot;
+  },
+  {
+    &quot;original&quot;: &quot;look after&quot;,
+    &quot;meaning&quot;: &quot;돌보다&quot;,
+    &quot;example&quot;: &quot;Please look after my bag.&quot;,
+    &quot;type&quot;: &quot;idiom&quot;
+  }
+]
+</code></pre><a class="download" download href="./dictionary-example.json">JSON-Beispiel herunterladen</a><h2>CSV-Format</h2><p>Speichern Sie CSV UTF-8 (.csv) mit Kommas als Trennzeichen und einer Kopfzeile. original und meaning sind Pflichtspalten; example und type können entfallen. Werte mit Kommas, Anführungszeichen oder Zeilenumbrüchen müssen in doppelte Anführungszeichen eingeschlossen werden. Verdoppeln Sie innere Anführungszeichen. Tabellenprogramme erledigen dies beim CSV-UTF-8-Export in der Regel automatisch.</p><pre dir="ltr"><code>original,meaning,example,type
+apple,사과,I eat an apple.,word
+look after,돌보다,Please look after my bag.,idiom
+</code></pre><a class="download" download href="./dictionary-example.csv">CSV-Beispiel herunterladen</a><h2>Prüfung beim Import</h2><p>Maximal 10 MB und 20.000 Einträge. Leere Originale oder Bedeutungen und doppelte Originale innerhalb einer Datei werden abgelehnt. Groß-/Kleinschreibung wird ignoriert und Leerraum vereinheitlicht. Korrigieren Sie die Datei und importieren Sie erneut.</p><h2>Verwaltung</h2><p>Öffnen Sie ein Wörterbuch, um Einträge zu suchen und zu bearbeiten. Sie können es umbenennen, aktivieren oder deaktivieren, die Datei ersetzen oder es löschen. Auf Seiten haben passende Einträge aktiver eigener Wörterbücher Vorrang vor dem integrierten Wörterbuch; der Wörterbuchname wird als Quelle angezeigt.</p></article><article data-language="es" lang="es" dir="ltr"><h1>Diccionario personal: guía de JSON y CSV</h1><p>En Ajustes → Diccionarios personales, añade un diccionario, escribe un nombre (por ejemplo, «1.000 palabras esenciales»), elige los idiomas del original y del significado, y selecciona un archivo JSON o CSV. El nombre y los idiomas se configuran en la app, no en el archivo.</p><h2>Campos</h2><p>original y meaning son textos obligatorios y no vacíos. example es una oración opcional. type es opcional: word o idiom. Si se omite, un original con espacios se clasifica como expresión; en caso contrario, como palabra. Usa los nombres de campo en inglés exactamente como se muestran, independientemente del idioma.</p><h2>Formato JSON</h2><p>Guarda una matriz de objetos en un archivo .json UTF-8, sin comentarios ni comas finales. El ejemplo contiene originales en inglés y significados en coreano; sustitúyelos por los idiomas elegidos.</p><pre dir="ltr"><code>[
+  {
+    &quot;original&quot;: &quot;apple&quot;,
+    &quot;meaning&quot;: &quot;사과&quot;,
+    &quot;example&quot;: &quot;I eat an apple.&quot;,
+    &quot;type&quot;: &quot;word&quot;
+  },
+  {
+    &quot;original&quot;: &quot;look after&quot;,
+    &quot;meaning&quot;: &quot;돌보다&quot;,
+    &quot;example&quot;: &quot;Please look after my bag.&quot;,
+    &quot;type&quot;: &quot;idiom&quot;
+  }
+]
+</code></pre><a class="download" download href="./dictionary-example.json">Descargar ejemplo JSON</a><h2>Formato CSV</h2><p>Guarda como CSV UTF-8 (.csv), separado por comas y con una fila de encabezados. original y meaning son obligatorios; example y type pueden omitirse. Encierra entre comillas dobles los valores que contengan comas, comillas o saltos de línea. Duplica las comillas interiores. Las hojas de cálculo suelen hacerlo al exportar como CSV UTF-8.</p><pre dir="ltr"><code>original,meaning,example,type
+apple,사과,I eat an apple.,word
+look after,돌보다,Please look after my bag.,idiom
+</code></pre><a class="download" download href="./dictionary-example.csv">Descargar ejemplo CSV</a><h2>Comprobaciones</h2><p>Máximo 10 MB y 20.000 entradas. Se rechazan originales o significados vacíos y originales duplicados en un mismo archivo. La detección ignora mayúsculas y normaliza espacios. Corrige el archivo e impórtalo de nuevo.</p><h2>Gestión</h2><p>Abre un diccionario para buscar y editar entradas. Puedes cambiar su nombre, activarlo o desactivarlo, reemplazar el archivo o eliminarlo. En las páginas, las coincidencias de diccionarios personales activos tienen prioridad sobre el diccionario integrado y muestran el nombre del diccionario como fuente.</p></article><article data-language="pt" lang="pt" dir="ltr"><h1>Dicionário pessoal: guia JSON e CSV</h1><p>Em Configurações → Dicionários pessoais, adicione um dicionário, informe um nome (por exemplo, “1.000 palavras essenciais”), escolha os idiomas do original e do significado e selecione um arquivo JSON ou CSV. O nome e os idiomas são definidos no aplicativo, não no arquivo.</p><h2>Campos</h2><p>original e meaning são textos obrigatórios e não vazios. example é uma frase opcional. type é opcional: word ou idiom. Se omitido, um original com espaços é classificado como expressão; caso contrário, como palavra. Mantenha os nomes dos campos em inglês exatamente como mostrados, independentemente do idioma.</p><h2>Formato JSON</h2><p>Salve uma lista de objetos em um arquivo .json UTF-8, sem comentários ou vírgulas finais. O exemplo tem originais em inglês e significados em coreano; substitua-os pelos idiomas escolhidos.</p><pre dir="ltr"><code>[
+  {
+    &quot;original&quot;: &quot;apple&quot;,
+    &quot;meaning&quot;: &quot;사과&quot;,
+    &quot;example&quot;: &quot;I eat an apple.&quot;,
+    &quot;type&quot;: &quot;word&quot;
+  },
+  {
+    &quot;original&quot;: &quot;look after&quot;,
+    &quot;meaning&quot;: &quot;돌보다&quot;,
+    &quot;example&quot;: &quot;Please look after my bag.&quot;,
+    &quot;type&quot;: &quot;idiom&quot;
+  }
+]
+</code></pre><a class="download" download href="./dictionary-example.json">Baixar exemplo JSON</a><h2>Formato CSV</h2><p>Salve como CSV UTF-8 (.csv), separado por vírgulas e com uma linha de cabeçalho. original e meaning são obrigatórios; example e type podem ser omitidos. Coloque entre aspas duplas os valores com vírgulas, aspas ou quebras de linha. Duplique as aspas internas. Planilhas normalmente fazem isso ao exportar como CSV UTF-8.</p><pre dir="ltr"><code>original,meaning,example,type
+apple,사과,I eat an apple.,word
+look after,돌보다,Please look after my bag.,idiom
+</code></pre><a class="download" download href="./dictionary-example.csv">Baixar exemplo CSV</a><h2>Verificações</h2><p>Máximo de 10 MB e 20.000 entradas. Originais ou significados vazios e originais duplicados no mesmo arquivo são rejeitados. A comparação ignora maiúsculas e normaliza espaços. Corrija o arquivo e importe novamente.</p><h2>Gerenciamento</h2><p>Abra um dicionário para pesquisar e editar entradas. Você pode renomeá-lo, ativá-lo ou desativá-lo, substituir o arquivo ou excluí-lo. Nas páginas, correspondências de dicionários pessoais ativos têm prioridade sobre o dicionário integrado, e o nome do seu dicionário aparece como fonte.</p></article><article data-language="ru" lang="ru" dir="ltr"><h1>Пользовательский словарь: JSON и CSV</h1><p>В разделе Настройки → Пользовательские словари добавьте словарь, укажите название (например, «1000 основных слов»), выберите языки оригинала и значения, затем файл JSON или CSV. Название и языки задаются в приложении, а не в файле.</p><h2>Поля</h2><p>original и meaning — обязательные непустые строки. example — необязательный пример предложения. type — необязательное поле: word или idiom. Без него оригинал с пробелами считается выражением, а без пробелов — словом. Сохраняйте английские имена полей в точности независимо от выбранного языка.</p><h2>Формат JSON</h2><p>Сохраните массив объектов в файле .json в кодировке UTF-8, без комментариев и лишней запятой в конце. В примере оригиналы на английском, значения на корейском; замените их текстом на выбранных языках.</p><pre dir="ltr"><code>[
+  {
+    &quot;original&quot;: &quot;apple&quot;,
+    &quot;meaning&quot;: &quot;사과&quot;,
+    &quot;example&quot;: &quot;I eat an apple.&quot;,
+    &quot;type&quot;: &quot;word&quot;
+  },
+  {
+    &quot;original&quot;: &quot;look after&quot;,
+    &quot;meaning&quot;: &quot;돌보다&quot;,
+    &quot;example&quot;: &quot;Please look after my bag.&quot;,
+    &quot;type&quot;: &quot;idiom&quot;
+  }
+]
+</code></pre><a class="download" download href="./dictionary-example.json">Скачать пример JSON</a><h2>Формат CSV</h2><p>Сохраните CSV UTF-8 (.csv) с разделителем-запятой и строкой заголовков. original и meaning обязательны; example и type можно опустить. Значения с запятыми, кавычками или переносами строк заключайте в двойные кавычки. Внутренние кавычки удваивайте. Табличные редакторы обычно делают это автоматически при экспорте в CSV UTF-8.</p><pre dir="ltr"><code>original,meaning,example,type
+apple,사과,I eat an apple.,word
+look after,돌보다,Please look after my bag.,idiom
+</code></pre><a class="download" download href="./dictionary-example.csv">Скачать пример CSV</a><h2>Проверка</h2><p>Не более 10 МБ и 20 000 записей. Пустые оригиналы или значения и повторяющиеся оригиналы в одном файле отклоняются. При поиске дублей регистр не учитывается, а пробелы нормализуются. Исправьте файл и импортируйте снова.</p><h2>Управление</h2><p>Откройте словарь для поиска и редактирования записей. Можно изменить название, включить или отключить словарь, заменить файл или удалить словарь. На страницах совпадения из активных пользовательских словарей имеют приоритет над встроенным словарём; название вашего словаря отображается как источник.</p></article><article data-language="hi" lang="hi" dir="ltr"><h1>निजी शब्दकोश: JSON और CSV गाइड</h1><p>सेटिंग्स → निजी शब्दकोश में शब्दकोश जोड़ें, नाम लिखें (जैसे “1,000 आवश्यक शब्द”), मूल और अर्थ की भाषाएँ चुनें, फिर JSON या CSV फ़ाइल चुनें। नाम और भाषाएँ ऐप में सेट करें, फ़ाइल में नहीं।</p><h2>फ़ील्ड</h2><p>original और meaning में खाली न होने वाला टेक्स्ट अनिवार्य है। example में उदाहरण वाक्य वैकल्पिक है। type वैकल्पिक है: word या idiom। इसे न देने पर मूल में खाली स्थान हो तो उसे वाक्यांश, अन्यथा शब्द माना जाता है। किसी भी भाषा के लिए फ़ील्ड नाम अंग्रेज़ी में बिल्कुल उदाहरण जैसे रखें।</p><h2>JSON प्रारूप</h2><p>ऑब्जेक्ट की सूची को UTF-8 .json फ़ाइल में सहेजें। टिप्पणियाँ या अंतिम आइटम के बाद अतिरिक्त कॉमा न डालें। उदाहरण में अंग्रेज़ी मूल और कोरियाई अर्थ हैं; अपनी चुनी भाषाओं का टेक्स्ट डालें।</p><pre dir="ltr"><code>[
+  {
+    &quot;original&quot;: &quot;apple&quot;,
+    &quot;meaning&quot;: &quot;사과&quot;,
+    &quot;example&quot;: &quot;I eat an apple.&quot;,
+    &quot;type&quot;: &quot;word&quot;
+  },
+  {
+    &quot;original&quot;: &quot;look after&quot;,
+    &quot;meaning&quot;: &quot;돌보다&quot;,
+    &quot;example&quot;: &quot;Please look after my bag.&quot;,
+    &quot;type&quot;: &quot;idiom&quot;
+  }
+]
+</code></pre><a class="download" download href="./dictionary-example.json">JSON उदाहरण डाउनलोड करें</a><h2>CSV प्रारूप</h2><p>कॉमा से अलग की गई CSV UTF-8 (.csv) फ़ाइल सहेजें और पहली पंक्ति में कॉलम नाम रखें। original और meaning अनिवार्य हैं; example और type कॉलम छोड़ सकते हैं। कॉमा, उद्धरण चिह्न या नई पंक्ति वाले मान को दोहरे उद्धरण चिह्नों में रखें। अंदर के दोहरे उद्धरण चिह्न को दो बार लिखें। स्प्रेडशीट ऐप CSV UTF-8 निर्यात में आम तौर पर यह अपने आप करते हैं।</p><pre dir="ltr"><code>original,meaning,example,type
+apple,사과,I eat an apple.,word
+look after,돌보다,Please look after my bag.,idiom
+</code></pre><a class="download" download href="./dictionary-example.csv">CSV उदाहरण डाउनलोड करें</a><h2>जाँच</h2><p>फ़ाइल अधिकतम 10 MB और 20,000 प्रविष्टियों की हो। खाली मूल या अर्थ और एक फ़ाइल में दोहराए गए मूल स्वीकार नहीं होते। दोहराव की जाँच में बड़े-छोटे अक्षर समान माने जाते हैं और खाली स्थान सामान्य किए जाते हैं। फ़ाइल सुधारकर फिर आयात करें।</p><h2>प्रबंधन</h2><p>प्रविष्टियाँ खोजने और बदलने के लिए शब्दकोश खोलें। नाम बदल सकते हैं, चालू या बंद कर सकते हैं, फ़ाइल बदल सकते हैं या शब्दकोश हटा सकते हैं। पृष्ठों पर सक्रिय निजी शब्दकोश की मेल खाती प्रविष्टियों को अंतर्निहित शब्दकोश से प्राथमिकता मिलती है और आपके शब्दकोश का नाम स्रोत के रूप में दिखता है।</p></article><article data-language="ar" lang="ar" dir="rtl"><h1>القاموس الشخصي: دليل JSON وCSV</h1><p>في الإعدادات ← القواميس الشخصية، أضف قاموسًا وأدخل اسمًا (مثل «1000 كلمة أساسية»)، واختر لغتي النص الأصلي والمعنى، ثم ملف JSON أو CSV. يُضبط الاسم واللغات في التطبيق لا في الملف.</p><h2>الحقول</h2><p>يجب أن يحتوي original وmeaning على نص غير فارغ. example جملة مثال اختيارية. type اختياري وقيمته word أو idiom. عند حذفه، يُصنّف النص الأصلي الذي يحتوي على مسافات كتعبير، وإلا فككلمة. استخدم أسماء الحقول الإنجليزية كما هي مهما كانت اللغة المختارة.</p><h2>تنسيق JSON</h2><p>احفظ مصفوفة من الكائنات في ملف .json بترميز UTF-8، دون تعليقات أو فواصل زائدة في النهاية. المثال يتضمن نصوصًا أصلية بالإنجليزية ومعاني بالكورية؛ استبدلها بنصوص بلغاتك المختارة.</p><pre dir="ltr"><code>[
+  {
+    &quot;original&quot;: &quot;apple&quot;,
+    &quot;meaning&quot;: &quot;사과&quot;,
+    &quot;example&quot;: &quot;I eat an apple.&quot;,
+    &quot;type&quot;: &quot;word&quot;
+  },
+  {
+    &quot;original&quot;: &quot;look after&quot;,
+    &quot;meaning&quot;: &quot;돌보다&quot;,
+    &quot;example&quot;: &quot;Please look after my bag.&quot;,
+    &quot;type&quot;: &quot;idiom&quot;
+  }
+]
+</code></pre><a class="download" download href="./dictionary-example.json">تنزيل مثال JSON</a><h2>تنسيق CSV</h2><p>احفظ الملف بتنسيق CSV UTF-8 (.csv) مفصول بفواصل مع صف عناوين. عمودا original وmeaning إلزاميان؛ يمكن حذف example وtype. ضع القيم التي تحتوي على فواصل أو علامات اقتباس أو أسطر جديدة بين علامتي اقتباس مزدوجتين. ضاعف علامة الاقتباس داخل القيمة. تُجري برامج جداول البيانات ذلك عادةً عند التصدير بصيغة CSV UTF-8.</p><pre dir="ltr"><code>original,meaning,example,type
+apple,사과,I eat an apple.,word
+look after,돌보다,Please look after my bag.,idiom
+</code></pre><a class="download" download href="./dictionary-example.csv">تنزيل مثال CSV</a><h2>التحقق</h2><p>الحد الأقصى 10 MB و20,000 إدخال. تُرفض النصوص الأصلية أو المعاني الفارغة وتكرارات النص الأصلي داخل الملف الواحد. يتجاهل فحص التكرار حالة الأحرف ويوحّد المسافات. صحّح الملف واستورده مجددًا.</p><h2>الإدارة</h2><p>افتح القاموس للبحث عن الإدخالات وتعديلها. يمكنك إعادة تسميته وتفعيله أو تعطيله واستبدال ملفه أو حذفه. في الصفحات، تتقدم المطابقات في القواميس الشخصية المفعّلة على القاموس المدمج، ويظهر اسم قاموسك كمصدر.</p></article></main><footer>HighReader · HighGarden</footer><script>
+const labels = {"en": ["Language", "Skip to content", "Home"], "ko": ["언어", "본문으로 건너뛰기", "홈"], "ja": ["言語", "本文へスキップ", "ホーム"], "fr": ["Langue", "Aller au contenu", "Accueil"], "de": ["Sprache", "Zum Inhalt springen", "Startseite"], "es": ["Idioma", "Saltar al contenido", "Inicio"], "pt": ["Idioma", "Pular para o conteúdo", "Início"], "ru": ["Язык", "Перейти к содержимому", "Главная"], "hi": ["भाषा", "सामग्री पर जाएँ", "होम"], "ar": ["اللغة", "انتقل إلى المحتوى", "الرئيسية"]};
+const select = document.getElementById('guide-language');
+function setLanguage(language) {
+  const lang = Object.hasOwn(labels, language) ? language : 'en';
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.querySelectorAll('article[data-language]').forEach(article => { article.hidden = article.dataset.language !== lang; });
+  select.value = lang;
+  document.getElementById('language-label').textContent = labels[lang][0];
+  document.getElementById('skip-link').textContent = labels[lang][1];
+  document.getElementById('home-link').textContent = labels[lang][2];
+  document.title = 'HighReader — ' + document.querySelector('article:not([hidden]) h1').textContent;
+}
+const requested = new URLSearchParams(location.search).get('lang') || navigator.language.split('-')[0];
+setLanguage(requested);
+select.addEventListener('change', () => {
+  setLanguage(select.value);
+  const url = new URL(location.href);
+  url.searchParams.set('lang', select.value);
+  history.replaceState(null, '', url);
+});
+</script></body></html>

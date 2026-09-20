@@ -20,3 +20,12 @@ footer { padding-block:24px 40px; border-top:1px solid var(--border); }
 .skip { position:absolute; top:-100px; left:20px; background:var(--surface); padding:12px; }
 .skip:focus { top:10px; }
 @media(prefers-color-scheme:dark) { :root { --canvas:#111211; --surface:#1b1d1b; --ink:#f2f4f0; --body:#dde3dc; --secondary:#afb8ad; --primary:#91c29c; --border:#384038; } }
+
+/* Dictionary guide: preserve readable code and touch targets on narrow screens. */
+pre { padding:20px; overflow:auto; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); line-height:1.6; text-align:left; }
+code { font-size:.9rem; font-family:ui-monospace,SFMono-Regular,Consolas,monospace; }
+select { min-height:44px; max-width:100%; padding:8px 12px; color:var(--ink); background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); font:inherit; }
+select:focus-visible { outline:3px solid var(--primary); outline-offset:3px; }
+nav label { align-self:center; }
+.download { display:inline-block; padding-block:10px; }
+article[hidden] { display:none; }
